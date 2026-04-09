@@ -1,0 +1,13 @@
+{
+  "name": "ai-ticketing-demo",
+  "version": "1.0.0",
+  "description": "Demo data generator for AI-Powered Ticketing System",
+  "main": "demo-data.js",
+  "scripts": {
+    "demo": "node demo-data.js",
+    "test": "node test-single-ticket.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
+  }
+}
