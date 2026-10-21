@@ -48,3 +48,4 @@ GitHub Actions CI/CD pipeline for Spring Boot 3.2 + React 18 application.
 
 ## Day 3 Outcome
 CI/CD pipeline documented. No code changes. 0 PRs. Ready for Day 4 (project restructuring).
+<!-- Feature branch commit for PR -->
