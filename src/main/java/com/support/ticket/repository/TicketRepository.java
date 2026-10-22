@@ -1,7 +1,7 @@
-package com.support.repository;
+package com.support.ticket.repository;
 
-import com.support.entity.Ticket;
-import com.support.entity.TicketStatus;
+import com.support.shared.entity.TicketStatus;
+import com.support.ticket.entity.Ticket;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;
