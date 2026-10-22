@@ -2,9 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [development]
-  pull_request:
-    branches: [development]
+    branches: \[main\]
 
 jobs:
   lint-typecheck:
@@ -88,3 +86,4 @@ jobs:
           curl -f http://localhost:8000/api/health
           curl -f http://localhost:8000/api/ready
           docker compose down
+
