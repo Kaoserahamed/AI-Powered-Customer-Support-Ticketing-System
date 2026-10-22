@@ -1,8 +1,8 @@
-package com.support.dto;
+package com.support.ticket.dto;
 
-import com.support.entity.Sentiment;
-import com.support.entity.TicketCategory;
-import com.support.entity.TicketStatus;
+import com.support.shared.entity.Sentiment;
+import com.support.shared.entity.TicketCategory;
+import com.support.shared.entity.TicketStatus;
 import java.time.LocalDateTime;
 
 public class TicketResponse {
@@ -17,11 +17,11 @@ public class TicketResponse {
     private String aiSuggestedResponse;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    
+
     public static Builder builder() {
         return new Builder();
     }
-    
+
     public static class Builder {
         private Long id;
         private String customerName;
@@ -34,7 +34,7 @@ public class TicketResponse {
         private String aiSuggestedResponse;
         private LocalDateTime createdAt;
         private LocalDateTime updatedAt;
-        
+
         public Builder id(Long id) { this.id = id; return this; }
         public Builder customerName(String customerName) { this.customerName = customerName; return this; }
         public Builder customerEmail(String customerEmail) { this.customerEmail = customerEmail; return this; }
@@ -46,7 +46,7 @@ public class TicketResponse {
         public Builder aiSuggestedResponse(String aiSuggestedResponse) { this.aiSuggestedResponse = aiSuggestedResponse; return this; }
         public Builder createdAt(LocalDateTime createdAt) { this.createdAt = createdAt; return this; }
         public Builder updatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; return this; }
-        
+
         public TicketResponse build() {
             TicketResponse response = new TicketResponse();
             response.id = this.id;
@@ -63,7 +63,7 @@ public class TicketResponse {
             return response;
         }
     }
-    
+
     public Long getId() { return id; }
     public String getCustomerName() { return customerName; }
     public String getCustomerEmail() { return customerEmail; }

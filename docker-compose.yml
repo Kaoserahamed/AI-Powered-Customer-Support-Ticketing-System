@@ -1,6 +1,23 @@
 version: '3.8'
 
 services:
+  app:
+    build: .
+    container_name: ticketing-app
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/ticketing_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres123
+      GOOGLE_AI_KEY: ${GOOGLE_AI_KEY:-}
+    ports:
+      - "8080:8080"
+    networks:
+      - ticketing-network
+    restart: unless-stopped
+
   postgres:
     image: postgres:15-alpine
     container_name: ticketing-postgres
@@ -14,6 +31,11 @@ services:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - ticketing-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ticketing_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   postgres_data:
